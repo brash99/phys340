@@ -4,9 +4,8 @@
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/venv" />
       <excludeFolder url="file://$MODULE_DIR$/venv2" />
-      <excludeFolder url="file://$MODULE_DIR$/venv3" />
     </content>
-    <orderEntry type="jdk" jdkName="$USER_HOME$/anaconda3" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="phys441" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>
