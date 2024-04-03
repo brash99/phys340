@@ -1,0 +1,6 @@
+#!/bin/sh
+git checkout solutions
+git fetch origin
+git merge origin/main
+git push origin solutions
+git checkout main
