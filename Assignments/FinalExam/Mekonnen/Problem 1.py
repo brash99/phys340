@@ -25,11 +25,11 @@ r = sp.symbols('r')
 r_expression = sp.solve(z2 - r * z1, r)[0]
 
 # Display results
-# print("Condition for a purely real product:")
-# print(condition)
+print("Condition for a purely real product:")
+print(condition)
 #
 # print("Solution for b2 in terms of a1, b1, a2:")
-# print(solution)
+print(solution)
 
 print("Value of 'r' such that z1 = r * z2:")
 sp.pprint(r_expression)

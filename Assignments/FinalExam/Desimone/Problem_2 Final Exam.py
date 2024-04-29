@@ -12,7 +12,7 @@ Capacitor = 0.000001  # Capacitance in Farads (1 µF)
 Inductor = 0.00001  # Inductance in Henry (10 µH)
 
 # Analyzing frequency range
-Frequency = np.logspace(1, 10, 500)
+Frequency = np.logspace(4, 5, 1000)
 
 # Resonance frequency.
 Resonance_Frequency = (1 / (np.sqrt(Inductor * Capacitor))) * Frequency
@@ -35,7 +35,7 @@ phase_vals = np.angle(Imp, deg=True)  # Phase in degrees
 resonance_vals = np.angle(Res_Imp, deg=True)  # Phase in degrees
 
 # Plot setup
-fig, (mag, phase, resonance_mag, resonance_phase) = plt.subplots(4, 1, figsize=(10, 8))
+fig, (mag, phase) = plt.subplots(2, 1, figsize=(10, 8))
 
 # Magnitude plot
 mag.plot(Omega, magnitude_vals)
@@ -53,19 +53,19 @@ phase.set_ylabel("Phase")
 phase.grid(True, which='both', linestyle='--', linewidth=0.5)
 
 # Resonance magnitude plot
-resonance_mag.plot(Resonance_Frequency, magnitude_vals)
-resonance_mag.set_xscale('log')
-resonance_mag.set_title('Resonance Magnitude')
-resonance_mag.set_ylabel('Magnitude')
-resonance_mag.grid(True, which='both', linestyle='--', linewidth=0.5)
+#resonance_mag.plot(Resonance_Frequency, magnitude_vals)
+#resonance_mag.set_xscale('log')
+#resonance_mag.set_title('Resonance Magnitude')
+#resonance_mag.set_ylabel('Magnitude')
+#resonance_mag.grid(True, which='both', linestyle='--', linewidth=0.5)
 
 # Resonance phase plot
-resonance_phase.plot(Resonance_Frequency, phase_vals)
-resonance_phase.set_xscale('log')
-resonance_phase.set_title('Resonance Phase')
-resonance_phase.set_xlabel('(ω, Hz)')
-resonance_phase.set_ylabel('Phase')
-resonance_phase.grid(True, which='both', linestyle='--', linewidth=0.5)
+#resonance_phase.plot(Resonance_Frequency, phase_vals)
+#resonance_phase.set_xscale('log')
+#resonance_phase.set_title('Resonance Phase')
+#resonance_phase.set_xlabel('(ω, Hz)')
+#resonance_phase.set_ylabel('Phase')
+#resonance_phase.grid(True, which='both', linestyle='--', linewidth=0.5)
 
 # Display plots
 plt.tight_layout()
