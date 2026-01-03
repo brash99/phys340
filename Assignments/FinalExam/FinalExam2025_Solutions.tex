@@ -1,0 +1,253 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{graphicx}
+
+\begin{document}
+
+\title{Solutions: Mathematical Physics Final Exam}
+\author{}
+\date{}
+\maketitle
+
+\section*{Question 1: Algebra of Vectors}
+
+Consider the following two vectors in \( \mathbb{R}^3 \):
+\[
+\mathbf{A} = 3\hat{i} - 2\hat{j} + \hat{k}, \quad \mathbf{B} = \hat{i} + 4\hat{j} - 2\hat{k}.
+\]
+
+\begin{enumerate}[a)]
+  \item Compute the dot product \( \mathbf{A} \cdot \mathbf{B} \).
+  
+  \[
+  \mathbf{A} \cdot \mathbf{B} = 3 \times 1 + (-2) \times 4 + 1 \times (-2) = 3 - 8 - 2 = -7.
+  \]
+
+  \item Compute the cross product \( \mathbf{A} \times \mathbf{B} \).
+  
+  \[
+  \mathbf{A} \times \mathbf{B} = \begin{vmatrix} \hat{i} & \hat{j} & \hat{k} \\ 3 & -2 & 1 \\ 1 & 4 & -2 \end{vmatrix}
+  = \hat{i} \begin{vmatrix} -2 & 1 \\ 4 & -2 \end{vmatrix} - \hat{j} \begin{vmatrix} 3 & 1 \\ 1 & -2 \end{vmatrix} + \hat{k} \begin{vmatrix} 3 & -2 \\ 1 & 4 \end{vmatrix}.
+  \]
+  
+  \[
+  = \hat{i} \left[ (-2)(-2) - (1)(4) \right] - \hat{j} \left[ (3)(-2) - (1)(1) \right] + \hat{k} \left[ (3)(4) - (-2)(1) \right]
+  \]
+  \[
+  = \hat{i} \left[ 4 - 4 \right] - \hat{j} \left[ -6 - 1 \right] + \hat{k} \left[ 12 + 2 \right]
+  \]
+  \[
+  = 0\hat{i} + 7\hat{j} + 14\hat{k}.
+  \]
+  Therefore, 
+  \[
+  \mathbf{A} \times \mathbf{B} = 7\hat{j} + 14\hat{k}.
+  \]
+
+  \item Find the angle between the two vectors \( \mathbf{A} \) and \( \mathbf{B} \).
+
+  The angle \( \theta \) between the vectors is given by:
+  \[
+  \cos \theta = \frac{\mathbf{A} \cdot \mathbf{B}}{|\mathbf{A}| |\mathbf{B}|}
+  \]
+  First, compute the magnitudes of \( \mathbf{A} \) and \( \mathbf{B} \):
+  \[
+  |\mathbf{A}| = \sqrt{3^2 + (-2)^2 + 1^2} = \sqrt{9 + 4 + 1} = \sqrt{14}, \quad |\mathbf{B}| = \sqrt{1^2 + 4^2 + (-2)^2} = \sqrt{1 + 16 + 4} = \sqrt{21}.
+  \]
+  Now, compute the cosine of the angle:
+  \[
+  \cos \theta = \frac{-7}{\sqrt{14} \times \sqrt{21}} = \frac{-7}{\sqrt{294}}.
+  \]
+  Hence,
+  \[
+  \theta = \cos^{-1} \left( \frac{-7}{\sqrt{294}} \right).
+  \]
+
+\end{enumerate}
+
+\section*{Question 2: Coupled Linear First-Order Differential Equations}
+
+Consider the coupled system of differential equations:
+\[
+\frac{dx}{dt} = 4x + y, \quad \frac{dy}{dt} = -2x + y.
+\]
+
+\begin{enumerate}[a)]
+  \item Write the system in matrix form: \( \frac{d\vec{X}}{dt} = A \vec{X} \).
+  
+  \[
+  \vec{X} = \begin{bmatrix} x \\ y \end{bmatrix}, \quad A = \begin{bmatrix} 4 & 1 \\ -2 & 1 \end{bmatrix}, \quad \frac{d\vec{X}}{dt} = A \vec{X}
+  \]
+
+  \item Find the eigenvalues and eigenvectors of matrix \( A \).
+
+  The eigenvalues are the solutions to \( \det(A - \lambda I) = 0 \):
+  \[
+  \det \begin{bmatrix} 4 - \lambda & 1 \\ -2 & 1 - \lambda \end{bmatrix} = (4 - \lambda)(1 - \lambda) + 2 = \lambda^2 - 5\lambda + 6 = 0.
+  \]
+  Solving this quadratic equation gives the eigenvalues:
+  \[
+  \lambda = 2, 3.
+  \]
+  Now, find the eigenvectors:
+  - For \( \lambda = 2 \), solve \( (A - 2I)\vec{v} = 0 \):
+  \[
+  \begin{bmatrix} 2 & 1 \\ -2 & -1 \end{bmatrix} \begin{bmatrix} v_1 \\ v_2 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}.
+  \]
+  This gives the eigenvector \( \vec{v_1} = \begin{bmatrix} 1 \\ -2 \end{bmatrix} \).
+  
+  - For \( \lambda = 3 \), solve \( (A - 3I)\vec{v} = 0 \):
+  \[
+  \begin{bmatrix} 1 & 1 \\ -2 & -2 \end{bmatrix} \begin{bmatrix} v_1 \\ v_2 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}.
+  \]
+  This gives the eigenvector \( \vec{v_2} = \begin{bmatrix} 1 \\ -1 \end{bmatrix} \).
+
+  \item Solve the system for \( x(t) \) and \( y(t) \), assuming initial conditions \( x(0) = 2 \), \( y(0) = 1 \).
+
+  The general solution is:
+  \[
+  \vec{X}(t) = c_1 e^{2t} \begin{bmatrix} 1 \\ -2 \end{bmatrix} + c_2 e^{3t} \begin{bmatrix} 1 \\ -1 \end{bmatrix}.
+  \]
+  Applying initial conditions:
+  \[
+  c_1 \begin{bmatrix} 1 \\ -2 \end{bmatrix} + c_2 \begin{bmatrix} 1 \\ -1 \end{bmatrix} = \begin{bmatrix} 2 \\ 1 \end{bmatrix}.
+  \]
+  This gives the system:
+  \[
+  \begin{cases}
+    c_1 + c_2 = 2 \\
+    -2c_1 - c_2 = 1
+  \end{cases}
+  \]
+  Solving this system yields \( c_1 = -3 \), \( c_2 = 5 \). Thus, the solution is:
+  \[
+  \vec{X}(t) = -3 e^{2t} \begin{bmatrix} 1 \\ -2 \end{bmatrix} + 5 e^{3t} \begin{bmatrix} 1 \\ -1 \end{bmatrix}.
+  \]
+
+  \item Describe the behavior of the solution in the phase plane.
+
+  Since both eigenvalues are real and positive (\( \lambda = 2, 3 \)), and the eigenvectors are linearly independent, the system represents an **unstable node**. The solutions will exponentially diverge from the origin along the directions defined by the eigenvectors.
+\end{enumerate}
+
+\section*{Question 3: AC RL Circuit and Complex Impedance}
+
+An alternating voltage source \( V(t) = V_0 e^{i\omega t} \) is applied across a resistor \( R \) and an inductor \( L \) connected in series.
+
+\begin{enumerate}[a)]
+  \item Using the concept of complex impedance, derive the total impedance \( Z \) of the RL circuit in terms of \( R \), \( L \), and the angular frequency \( \omega \).
+
+  The impedance of the resistor is \( Z_R = R \), and the impedance of the inductor is \( Z_L = i\omega L \). The total impedance is the sum of these two:
+  \[
+  Z = Z_R + Z_L = R + i\omega L.
+  \]
+
+  \item Using Ohm's law in the complex form \( V(t) = I(t) Z \), find the expression for the current \( I(t) \) in the circuit.
+
+  From Ohm's law, we have:
+  \[
+  I(t) = \frac{V(t)}{Z} = \frac{V_0 e^{i\omega t}}{R + i\omega L}.
+  \]
+  Multiplying numerator and denominator by the complex conjugate of \( Z \), we get:
+  \[
+  I(t) = \frac{V_0 e^{i\omega t}(R - i\omega L)}{R^2 + (\omega L)^2}.
+  \]
+  Thus, the current is:
+  \[
+  I(t) = \frac{V_0}{\sqrt{R^2 + (\omega L)^2}} e^{i(\omega t - \theta)},
+  \]
+  where \( \theta = \tan^{-1}\left( \frac{\omega L}{R} \right) \) is the phase shift.
+
+  \item Find the phase shift between the voltage and the current in the circuit.
+
+  The phase shift is given by \( \theta = \tan^{-1}\left( \frac{\omega L}{R} \right) \). This phase shift represents the time delay between the voltage and current waveforms, which depends on the relative contributions of the resistor and inductor to the total impedance.
+\end{enumerate}
+
+\section*{Question 4: Fourier Analysis}
+
+Let \( f(x) \) be a periodic function with period \( T \), defined as:
+\[
+f(x) = \begin{cases}
+  1, & 0 \leq x < \frac{T}{2}, \\
+  -1, & \frac{T}{2} \leq x < T.
+\end{cases}
+\]
+
+\begin{enumerate}[a)]
+  \item Compute the Fourier coefficients \( a_0 \), \( a_n \), and \( b_n \) for this function.
+  
+  The Fourier coefficients are computed using the formulas:
+  \[
+  a_0 = \frac{2}{T} \int_0^T f(x) \, dx = \frac{2}{T} \left( \int_0^{T/2} 1 \, dx + \int_{T/2}^T (-1) \, dx \right) = 0.
+  \]
+  For \( n \geq 1 \),
+  \[
+  a_n = \frac{2}{T} \int_0^T f(x) \cos\left( \frac{2\pi n x}{T} \right) \, dx = 0,
+  \]
+  and
+  \[
+  b_n = \frac{2}{T} \int_0^T f(x) \sin\left( \frac{2\pi n x}{T} \right) \, dx = \frac{4}{n\pi} \left( 1 - (-1)^n \right).
+  \]
+
+  \item Find the Fourier series representation of \( f(x) \).
+  
+  The Fourier series is:
+  \[
+  f(x) = \sum_{n=1}^{\infty} \frac{4}{n\pi} \sin\left( \frac{2\pi n x}{T} \right).
+  \]
+
+  \item Discuss the convergence of the Fourier series for this function.
+  
+  The Fourier series for this piecewise function converges to \( f(x) \) at all points except where \( f(x) \) is discontinuous (at \( x = T/2 \)). At these points, the series converges to the average of the left-hand and right-hand limits of the function, according to the Dirichlet conditions.
+
+\end{enumerate}
+
+\section*{Question 5: Vector Calculus}
+
+Let \( \mathbf{F} = x^2 \hat{i} + 2xy \hat{j} + yz \hat{k} \) be a vector field.
+
+\begin{enumerate}[a)]
+  \item Compute the divergence of \( \mathbf{F} \), \( \nabla \cdot \mathbf{F} \).
+  
+  \[
+  \nabla \cdot \mathbf{F} = \frac{\partial}{\partial x} (x^2) + \frac{\partial}{\partial y} (2xy) + \frac{\partial}{\partial z} (yz) = 2x + 2x + y = 2x + y.
+  \]
+
+  \item Compute the curl of \( \mathbf{F} \), \( \nabla \times \mathbf{F} \).
+  
+  \[
+  \nabla \times \mathbf{F} = \begin{vmatrix} \hat{i} & \hat{j} & \hat{k} \\ \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\ x^2 & 2xy & yz \end{vmatrix}
+  = \hat{i} \left( \frac{\partial yz}{\partial y} - \frac{\partial (2xy)}{\partial z} \right) - \hat{j} \left( \frac{\partial yz}{\partial x} - \frac{\partial (x^2)}{\partial z} \right) + \hat{k} \left( \frac{\partial (2xy)}{\partial x} - \frac{\partial (x^2)}{\partial y} \right).
+  \]
+  Simplifying, we get:
+  \[
+  \nabla \times \mathbf{F} = \hat{i}(z - 0) - \hat{j}(0 - 0) + \hat{k}(2y - 0) = z \hat{i} + 2y \hat{k}.
+  \]
+
+  \item Evaluate the line integral of \( \mathbf{F} \) along the curve \( C \) parameterized by \( \mathbf{r}(t) = \langle t, t^2, t^3 \rangle \) for \( t \) from 0 to 1.
+  
+  The line integral is given by:
+  \[
+  \int_C \mathbf{F} \cdot d\mathbf{r} = \int_0^1 \mathbf{F}(\mathbf{r}(t)) \cdot \frac{d\mathbf{r}(t)}{dt} dt.
+  \]
+  First, compute \( \frac{d\mathbf{r}(t)}{dt} = \langle 1, 2t, 3t^2 \rangle \). Next, substitute \( \mathbf{r}(t) = \langle t, t^2, t^3 \rangle \) into \( \mathbf{F} \):
+  \[
+  \mathbf{F}(t, t^2, t^3) = \langle t^2, 2t^3, t^5 \rangle.
+  \]
+  Then, the dot product is:
+  \[
+  \mathbf{F} \cdot \frac{d\mathbf{r}}{dt} = t^2(1) + 2t^3(2t) + t^5(3t^2) = t^2 + 4t^4 + 3t^7.
+  \]
+  Finally, integrate with respect to \( t \):
+  \[
+  \int_0^1 (t^2 + 4t^4 + 3t^7) \, dt = \left[ \frac{t^3}{3} + \frac{4t^5}{5} + \frac{3t^8}{8} \right]_0^1 = \frac{1}{3} + \frac{4}{5} + \frac{3}{8}.
+  \]
+  The final answer is:
+  \[
+  \int_C \mathbf{F} \cdot d\mathbf{r} = \frac{1}{3} + \frac{4}{5} + \frac{3}{8} = \frac{40 + 24 + 15}{120} = \frac{79}{120}.
+  \]
+\end{enumerate}
+
+\end{document}
+
