@@ -1,0 +1,23 @@
+\contentsline {section}{\numberline {1}The Big Picture: What Happens When You Type a Prompt?}{3}{section.1}%
+\contentsline {section}{\numberline {2}Tokenization}{3}{section.2}%
+\contentsline {section}{\numberline {3}From Token IDs to Vectors}{3}{section.3}%
+\contentsline {section}{\numberline {4}Vocabulary Space and Canonical Basis}{4}{section.4}%
+\contentsline {section}{\numberline {5}Embedding as a Linear Map}{4}{section.5}%
+\contentsline {section}{\numberline {6}Geometry of the Embedding Space}{5}{section.6}%
+\contentsline {section}{\numberline {7}A Concrete Toy Example: Small Vocabulary, Small Embedding Dimension}{5}{section.7}%
+\contentsline {subsection}{\numberline {7.1}One-hot vectors in $\mathbb {R}^6$}{5}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Choose a small embedding dimension}{6}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Define an explicit embedding matrix}{6}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}Embed a prompt}{6}{subsection.7.4}%
+\contentsline {subsection}{\numberline {7.5}Geometry now encodes similarity}{7}{subsection.7.5}%
+\contentsline {subsection}{\numberline {7.6}A linear-combination step (attention-like behavior)}{7}{subsection.7.6}%
+\contentsline {section}{\numberline {8}Positional Encoding}{7}{section.8}%
+\contentsline {section}{\numberline {9}Scaled Dot-Product Attention}{8}{section.9}%
+\contentsline {section}{\numberline {10}Attention as a Kernel Operator}{8}{section.10}%
+\contentsline {section}{\numberline {11}High-Dimensional Geometry}{8}{section.11}%
+\contentsline {section}{\numberline {12}Nonlinear Layers}{9}{section.12}%
+\contentsline {section}{\numberline {13}Variational Interpretation}{9}{section.13}%
+\contentsline {section}{\numberline {14}Spectral Structure}{9}{section.14}%
+\contentsline {section}{\numberline {15}Conceptual Synthesis}{9}{section.15}%
+\contentsline {section}{\numberline {16}Exercises}{10}{section.16}%
+\contentsline {section}{\numberline {17}References}{10}{section.17}%
